@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/chessboard"
+        layout="@layout/chessboard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.8"
+        app:layout_constraintDimensionRatio="1:1"/>
+
+    <TextView
+        android:id="@+id/result_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chessboard" />
+
+    <TextView
+        android:id="@+id/white_promotion_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/result_textview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/white_promotion_type"/>
+    <TextView
+        android:id="@+id/black_promotion_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/white_promotion_type"
+        app:layout_constraintTop_toBottomOf="@+id/result_textview"
+        android:layout_marginLeft="30dp"
+        android:text="@string/black_promotion_type"/>
+
+
+    <Spinner
+        android:id="@+id/white_promotion_type_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/white_promotion_type"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+    <Spinner
+        android:id="@+id/black_promotion_type_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/black_promotion_type"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias=".7"
+        android:layout_marginLeft="30dp"/>
+
+    <Button
+        android:id="@+id/undo_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/undo"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintTop_toBottomOf="@+id/white_promotion_type_spinner" />
+
+    <Button
+        android:id="@+id/AI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/AI"
+        android:textAlignment="center"
+        app:layout_constraintLeft_toRightOf="@+id/undo_button"
+        app:layout_constraintTop_toBottomOf="@+id/black_promotion_type_spinner"/>
+    <Button
+        android:id="@+id/draw_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Draw"
+        app:layout_constraintTop_toBottomOf="@+id/black_promotion_type_spinner"
+        app:layout_constraintLeft_toRightOf="@+id/AI"/>
+    <Button
+        android:id="@+id/resign_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Resign"
+        app:layout_constraintTop_toBottomOf="@+id/black_promotion_type_spinner"
+        app:layout_constraintLeft_toRightOf="@+id/draw_button" />
+    <Button
+        android:id="@+id/restart_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textAlignment="center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintTop_toBottomOf="@+id/resign_button"
+        android:text="Restart Game"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/record_button"
+        app:layout_constraintLeft_toRightOf="@+id/restart_button"
+        app:layout_constraintTop_toBottomOf="@+id/resign_button"
+        android:text="Save Recording"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/recorded_moves"
+        android:text="Recorded Moves"/>
+
+    <ListView
+        android:id="@+id/recorded_moves"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.14"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:stackFromBottom="true"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

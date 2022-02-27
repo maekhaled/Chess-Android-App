@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.android82">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Android82">
+        <activity
+            android:name=".ReplayGame"
+            android:exported="false" />
+        <activity
+            android:name=".ViewGames"
+            android:exported="false"
+            android:label="@string/title_activity_view_games"
+            android:parentActivityName=".ChessApp"
+            android:theme="@style/Theme.Android82.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.android82.ChessApp" />
+        </activity>
+        <activity
+            android:name=".AddGame"
+            android:exported="false"
+            android:label="@string/title_activity_add_game"
+            android:parentActivityName=".PlayGame"
+            android:theme="@style/Theme.Android82.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.android82.PlayGame" />
+        </activity>
+        <activity
+            android:name=".ViewGame"
+            android:exported="false"
+            android:label="@string/title_activity_view_game"
+            android:parentActivityName=".ViewGames"
+            android:theme="@style/Theme.Android82.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.android82.ViewGames" />
+        </activity>
+        <activity
+            android:name=".PlayGame"
+            android:exported="false"
+            android:label="@string/title_activity_play_game"
+            android:parentActivityName=".ChessApp"
+            android:theme="@style/Theme.Android82.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.android82.ChessApp" />
+        </activity>
+        <activity
+            android:name=".ChessApp"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
